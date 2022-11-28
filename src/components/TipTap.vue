@@ -118,6 +118,9 @@ export default {
     $t(label) {
       return label;
     },
+    $sanitize(html) {
+      return html;
+    },
     setLink() {
       const url = window.prompt('URL');
 

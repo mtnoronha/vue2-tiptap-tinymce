@@ -1,24 +1,14 @@
-# test-tiptap
+# Integration with Vue
 
-## Project setup
-```
-npm install
-```
+- With TipTap we need to use [3rd party components](https://github.com/Leecason/element-tiptap) or create one ourself.
+- With TinyMCE we have an [Official Vue Integration](https://github.com/tinymce/tinymce-vue).
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+# Paste formatted documents (like word etc)
 
-### Compiles and minifies for production
-```
-npm run build
-```
+[Tiny](doc-TinyMCE.png)
+vs
+[TipTap](doc-tiptap.png)
 
-### Lints and fixes files
-```
-npm run lint
-```
+I found this project called [Element TipTap](https://github.com/Leecason/element-tiptap) that wraps everything we need, and tested pasted the same document for a reference. But there's [this bug](https://github.com/Leecason/element-tiptap/issues/170) that prevents us to use FontSize and paste documents without crashing.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
