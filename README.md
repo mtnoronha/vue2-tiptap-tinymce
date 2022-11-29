@@ -23,6 +23,12 @@ I found this project called [Element TipTap](https://github.com/Leecason/element
 
 Note: TinyMCE has a paid plugin called PowerPaste.
 
+# Autocomplete
+
+- TinyMCE código tranquilo, sem muito mistério com muita liberdade e flexibilidade. Vídeo:
+![](tiny-auto.mp4)
+
+- TipTap in progress...
 
 
 
