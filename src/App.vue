@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    Teste do TipTap:
+    This is TipTap:
     <TipTap v-model="text"/>
 
+    <br><br>
+    This is TinyMCE:
+    <TinyMce v-model="text2" />
+    <br><br>
+    These are their results:
     <hr>
     {{ text }}
-    <hr>
-    <TinyMce v-model="text2" />
     <hr>
     {{ text2 }}
     <hr>
