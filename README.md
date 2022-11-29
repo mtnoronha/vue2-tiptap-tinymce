@@ -16,9 +16,11 @@
 
 # Paste formatted documents (like word etc)
 
-[Tiny](doc-TinyMCE.png)
-vs
-[TipTap](doc-tiptap.png)
+TinyMCE
+![image](doc-TinyMCE.png)
+
+TipTap
+![image](doc-tiptap.png)
 
 I found this project called [Element TipTap](https://github.com/Leecason/element-tiptap) that wraps everything we need, and tested pasted the same document for a reference. But there's [this bug](https://github.com/Leecason/element-tiptap/issues/170) that prevents us to use FontSize and paste documents without crashing.
 
@@ -28,7 +30,7 @@ Note: TinyMCE has a paid plugin called PowerPaste.
 
 - TinyMCE easy to code, with alot of flexibility. Working video:
 
-![](tiny-auto.mp4)
+![video](tiny-auto.mp4)
 
 - TipTap in progress...
 
