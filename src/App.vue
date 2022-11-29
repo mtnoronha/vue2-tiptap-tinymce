@@ -24,8 +24,8 @@ export default {
   name: 'App',
   data() {
     return {
-      text: 'TipTap empty for now...',
-      text2: 'TinyMce empty for now...',
+      text: '<b>TipTap</b> empty for now...',
+      text2: `<b>TinyMce</b> empty for now...`,
     };
   },
   components: {

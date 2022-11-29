@@ -66,6 +66,11 @@ export default {
       default: '',
     },
   },
+  mounted() {
+    if (this.value) {
+      this.innerValue = this.value;
+    }
+  },
   methods: {
     setUpTiny() {
       return {

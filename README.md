@@ -32,7 +32,7 @@ Note: TinyMCE has a paid plugin called PowerPaste.
 
 ![video](tiny-auto.mp4)
 
-- TipTap in progress...
+- TipTap - I already decided for TinyMCE. So I'm not building this anymore.
 
 
 
