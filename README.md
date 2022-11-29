@@ -1,16 +1,17 @@
 # Design
 
 - TipTap we have to code everything
-- Simple as declaring a string
+- TinyMCE is simple as declaring a string
 
 # Responsiveness
 
 - TipTap we have to code everything
-- Tiny out-of-the-box
+- TinyMCE out-of-the-box
 
 # Integration with Vue
 
 - With TipTap we need to use [3rd party components](https://github.com/Leecason/element-tiptap) or create one ourself.
+
 - With TinyMCE we have an [Official Vue Integration](https://github.com/tinymce/tinymce-vue).
 
 # Paste formatted documents (like word etc)
@@ -25,7 +26,8 @@ Note: TinyMCE has a paid plugin called PowerPaste.
 
 # Autocomplete
 
-- TinyMCE código tranquilo, sem muito mistério com muita liberdade e flexibilidade. Vídeo:
+- TinyMCE easy to code, with alot of flexibility. Working video:
+
 ![](tiny-auto.mp4)
 
 - TipTap in progress...
