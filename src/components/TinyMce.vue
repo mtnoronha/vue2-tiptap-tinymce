@@ -1,5 +1,5 @@
 <template>
-  <Editor :init="setUpTiny()" @change="changed" />
+  <Editor v-model="innerValue" :init="setUpTiny()" />
 </template>
 
 <script>
@@ -9,7 +9,6 @@ import 'tinymce/themes/silver/theme'
 import 'tinymce/models/dom/model'
 import 'tinymce/skins/ui/oxide/skin.css'
 import contentUiCss from 'tinymce/skins/ui/oxide/content.css';
-
 
 import 'tinymce/plugins/insertdatetime/plugin'
 import 'tinymce/plugins/anchor/plugin'
@@ -46,6 +45,11 @@ export default {
   components: {
     Editor,
   },
+  data() {
+    return {
+      innerValue: '',
+    };
+  },
   props: {
     value: {
       type: String,
@@ -61,10 +65,13 @@ export default {
         content_css: false,
         emoticons_database: 'emojis',
         content_style: contentUiCss.toString(),
+        promotion: false,
       };
     },
-    changed(text) {
-      console.log(text);
+  },
+  watch: {
+    innerValue(value) {
+      this.$emit('input', value);
     },
   },
 };
