@@ -41,6 +41,16 @@ import 'tinymce/plugins/emoticons/js/emojis'
 
 import Editor from '@tinymce/tinymce-vue'
 
+const specialChars = [
+  { text: 'Nome do aluno', value: '@[aluno_nome]' },
+  { text: 'Turma', value: '@[turma]' },
+  { text: 'Nome do pai', value: '@[aluno_pai]' },
+  { text: 'Nome da mãe', value: '@[aluno_mae]' },
+  { text: 'Assinatura do aluno', value: '@[aluno_assinatura]' },
+  { text: 'Assinatura do responsável 1', value: '@[responsavel_1_assinatura]' },
+  { text: 'Assinatura do responsável 2', value: '@[responsavel_2_assinatura]' },
+];
+
 export default {
   components: {
     Editor,
@@ -66,6 +76,59 @@ export default {
         emoticons_database: 'emojis',
         content_style: contentUiCss.toString(),
         promotion: false,
+        setup(editor) {
+          const onAction = (autocompleteApi, rng, value) => {
+            editor.selection.setRng(rng);
+            editor.insertContent(value);
+            autocompleteApi.hide();
+          };
+
+          const getMatchedChars = (pattern) => {
+            pattern = pattern.toLowerCase();
+            return specialChars.filter((char) => {
+              return char.text.toLowerCase().indexOf(pattern.slice(1)) !== -1
+                || char.value.toLowerCase().indexOf(pattern) !== -1;
+            });
+          };
+
+          /* An autocompleter that allows you to insert special characters */
+          editor.ui.registry.addAutocompleter('specialchars', {
+            ch: '@',
+            minChars: 1,
+            columns: '2',
+            onAction: onAction,
+            fetch: (pattern) => {
+              return new Promise((resolve) => {
+                resolve(
+                  getMatchedChars(pattern).map((char) => {
+                    return {
+                      type: 'cardmenuitem',
+                      value: char.value,
+                      label: char.text,
+                      items: [
+                              {
+                                type: 'cardcontainer',
+                                direction: 'vertical',
+                                items: [
+                                  {
+                                    type: 'cardtext',
+                                    text: char.text,
+                                    name: 'char_name'
+                                  },
+                                  {
+                                    type: 'cardtext',
+                                    text: char.value
+                                  }
+                                ]
+                              }
+                            ],
+                    }
+                  })
+                );
+              });
+            }
+          });
+        }
       };
     },
   },
